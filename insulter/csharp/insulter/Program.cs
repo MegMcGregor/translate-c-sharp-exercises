@@ -22,16 +22,20 @@ namespace insulter
             Random random = new Random();
 
             List<int> indexes = new List<int>();
-            while (indexes.Count > 3)
+            while (indexes.Count < 3)
             {
                 int candidate = random.Next(0, 7);
-
+                if (!indexes.Contains(candidate))
+                {
+                    indexes.Add(candidate);
+                }
             }
 
-            // for (int i = 0; i < insults.length; i++)
-            // {
-            //     Console.WriteLine();
-            // }
+            for (int i = 0; i < indexes.Count; i++)
+            {
+                int index = indexes[i];
+                Console.WriteLine(insults[index]);
+            }
         }
     }
 }
